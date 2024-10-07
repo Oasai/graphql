@@ -1,0 +1,53 @@
+.pie-slice {
+    transition: stroke 2s ease, stroke-width 0.2 ease;
+}
+
+.pie-slice:hover {
+    stroke: rgba(0, 0, 0, 0.5);
+    stroke-width: 0.2;
+    cursor: pointer;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    height: 100vh;
+    margin-top: -15vh;
+}
+
+.chart-container {
+    width: 30%;
+    height: 50%;
+    background-color: beige;
+    padding: 10px;
+    border-radius: 80px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+body {
+    background-color: #2e2e2e;
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+header {
+    background-color: #333;
+    color: white;
+    padding: 10px;
+    text-align: center;
+}
+
+.bar {
+    transition: stroke 2s ease, stroke-width 0.2 ease;
+}
+
+.bar:hover {
+    stroke: rgba(0, 0, 0, 0.5);
+    stroke-width: 0.2;
+    cursor: pointer;
+}
