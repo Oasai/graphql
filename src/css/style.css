@@ -86,7 +86,7 @@ header {
     color: white;
 }
 
-.loginForm {
+#loginForm {
     display: flex;
     justify-content: center;
     align-items: center;
