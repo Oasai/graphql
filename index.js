@@ -46,8 +46,8 @@ document.addEventListener("DOMContentLoaded", () => {
         localStorage.removeItem("token")
         loginModal.style.display = "block"
         mainContent.forEach(element => element.classList.add("hidden"))
-        document.getElementById("barchart-container").innerHTML = ""
-        document.getElementById("piechart-container").innerHTML = ""
+        document.getElementById("barchart-container").innerHTML = "<h2>XP per project</h2>"
+        document.getElementById("piechart-container").innerHTML = "<h2>Skills</h2>"
     })
 })
 
