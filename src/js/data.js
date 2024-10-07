@@ -1,21 +1,4 @@
-document.addEventListener("DOMContentLoaded", () => {
-    const token = localStorage.getItem("token")
-
-    if (!token) {
-        window.location.replace("/")
-    } else {
-        fetchData(token)
-    }
-})
-
-document.addEventListener("click", event => {
-    if (event.target.id === "logoutButton") {
-        localStorage.removeItem("token")
-        window.location.replace("/")
-    }
-})
-
-const endpoint = "https://01.kood.tech/api/graphql-engine/v1/graphql"
+const endpointAPI = "https://01.kood.tech/api/graphql-engine/v1/graphql"
 
 async function fetchData(token) {
     const userData = await fetchUserData(token)
@@ -193,7 +176,7 @@ function formatSkills(skills) {
 async function fetchUserData(token) {
     let userData
 
-    await fetch(endpoint, {
+    await fetch(endpointAPI, {
         method: "POST",
         headers: {
             "Content-Type": "application/json",
@@ -230,7 +213,7 @@ async function fetchUserData(token) {
 async function fetchProjects(token, userId) {
     let objectData = []
 
-    await fetch(endpoint, {
+    await fetch(endpointAPI, {
         method: "POST",
         headers: {
             "Content-Type": "application/json",
@@ -270,7 +253,7 @@ async function fetchProjects(token, userId) {
 async function fetchXPData(token, userId, objectIDs) {
     let xpData
 
-    await fetch(endpoint, {
+    await fetch(endpointAPI, {
         method: "POST",
         headers: {
             "Content-Type": "application/json",

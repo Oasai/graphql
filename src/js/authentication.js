@@ -8,11 +8,11 @@ document.getElementById("loginForm").addEventListener("submit", event => {
 })
 
 function authenticate(username, password) {
-    const endpoint = "https://01.kood.tech/api/auth/signin"
+    const endpointAuth = "https://01.kood.tech/api/auth/signin"
     const credentials = btoa(`${username}:${password}`)
     let token = ""
 
-    fetch (endpoint, {
+    fetch (endpointAuth, {
         method: "POST",
         headers: {
             "Content-Type": "application/json",
@@ -23,6 +23,7 @@ function authenticate(username, password) {
     .then(data => {
         if (data.error) {
             console.log("Invalid credentials")
+            document.getElementById("error").innerText = "Invalid credentials"
         } else {
             token = data
             localStorage.setItem("token", token)
