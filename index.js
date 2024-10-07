@@ -35,7 +35,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 document.getElementById("error").innerText = "Invalid credentials"
             } else {
                 token = data
-                localStorage.setItem("token", token)
+                fetchData(token)
                 loginModal.style.display = "none"
                 mainContent.forEach(element => element.classList.remove("hidden"))
             }
@@ -47,11 +47,6 @@ document.addEventListener("DOMContentLoaded", () => {
         loginModal.style.display = "block"
         mainContent.forEach(element => element.classList.add("hidden"))
     })
-
-    const token = localStorage.getItem("token")
-    if (token) {
-        fetchData(token)
-    }
 })
 
 const endpointAPI = "https://01.kood.tech/api/graphql-engine/v1/graphql"
