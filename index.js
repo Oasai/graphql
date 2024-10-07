@@ -38,6 +38,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 fetchData(token)
                 loginModal.style.display = "none"
                 mainContent.forEach(element => element.classList.remove("hidden"))
+                document.getElementById("error").innerText = ""
             }
         })
     }
